@@ -7,3 +7,5 @@ var std = 10; //globle scope , changeble in whole pgrm
 rollN0 = 3; // dec this wey also
 
 let age; // undefined 
+
+console.table([id, name, std, rollN0, age])
