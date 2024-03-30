@@ -12,5 +12,5 @@ let isLoggedIn = false
 
 // object 
 
-console.log(typeof (name))
+console.log(typeof (null))
 

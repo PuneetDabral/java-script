@@ -37,3 +37,11 @@ console.log((3+4)*5%3)
 
 
 // comparison 
+// mostly we have to avoid these type of comparsion 
+console.log(null>0);
+console.log(null==0);
+console.log(null>=0);
+
+console.log(undefined==0);
+console.log(undefined>0);
+console.log(undefined<0);
