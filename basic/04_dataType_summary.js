@@ -14,11 +14,35 @@ console.log(id===userId);
 // array, objects , functions
 
 let hero =['a','b','c'];
-let obj ={
-    name:'puneet',
-    class:'X'
-}
+// let obj ={
+//     name:'puneet',
+//     class:'X'
+// }
 
 const myFun =function(){
     console.log('heelo')
 }
+
+
+// +++++++++++++++++++++++++++++++++++++++++++
+// stack primitive, heap non-primitive
+// stack copy , heap reference (actual)
+
+let myName = "Puneet";  // stack 
+let newName = myName;
+newName='abhi' // it should be change because here we are getting copy from stack
+
+let obj ={
+    name:'puneet'
+} 
+let obj2 = obj; // here value is getting from same ref here (coming from heap)
+obj2.name='abhi'
+console.log(obj, obj2)
+
+
+
+
+
+console.log(myName);
+
+
