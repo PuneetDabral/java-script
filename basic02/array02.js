@@ -21,3 +21,8 @@ Array.from('hello') //['h','e','l']
 
 // interview case 
 Array.from({name:'abc'}) //return empty array cant convery you have to pass specific key and pair then only it should create array of that
+
+// of
+let ab=5;
+let b=10;
+console.log(Array.of(ab,b))
