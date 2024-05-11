@@ -32,3 +32,19 @@ console.log(Object.entries(obj5))
 // it gives truw and false
 console.log(tinderUser.hasOwnProperty('name'))
 
+
+// object destructure 
+const subject ={
+    name:'Hindi',
+    std:'10th',
+    assign:'puneet'
+}
+
+const {name, assign:person,std} = subject;
+console.log(name,person,std)
+
+// json
+// {
+//     'name':'puneet',
+//     'class':'10th'
+// }
