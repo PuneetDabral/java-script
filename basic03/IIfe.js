@@ -18,3 +18,4 @@
 // you can pass name also
 ((name)=>console.log(`${name}db connected`))('puneet');
 
+// note if you have to write two iifi then you need semi colan in the ends
