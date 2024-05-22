@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let div = document.createElement('div')
+        div.className='main'
+        div.id='myId'
+        // ?it directly select and replace it is quite optimze
+        div.setAttribute('title','hii this is puneets')
+        console.log(div)
+        div.style.backgroundColor="green"
+        // div.innerText ='hii this is puneet'
+
+        const textNode = document.createTextNode('hii')
+        div.appendChild(textNode)
+        document.body.appendChild(div)
+
+    </script>
+</body>
+</html>
+<!-- createAttribute -->
+<!-- getAttribute -->

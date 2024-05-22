@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="lang">
+      <li>hindi</li>
+    </ul>
+    <script>
+        // innerHtml and innerText is expensive use append child createNode 
+        const parent = document.querySelector('.lang')
+      const addLang = (name) => {
+        let li = document.createElement('li');
+        li.innerText = name; 
+        parent.appendChild(li)
+      };
+
+const optimizeVersion = (name)=>{
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(name));
+    document.querySelector('.lang').appendChild(li)
+}
+
+      addLang('english')
+      optimizeVersion('c++')
+
+    //   edit
+   let secondLang =  document.querySelector('li:nth-child(2)');
+//    secondLang.innerHTML='c'
+let newLi = document.createElement('li');
+newLi.textContent='c';
+secondLang.replaceWith(newLi)
+
+// after selecting an element
+// remove()
+    </script>
+  </body>
+</html>
