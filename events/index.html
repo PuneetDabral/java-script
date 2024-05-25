@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // its not a good approch , we need to attach event listoner because that gives us event propogation funality
+    // document.getElementById('owl').onclick = ()=>{
+    //     alert('hii')
+    // }
+
+    //  attachEvent() -> when internet explorer
+    // jQuery -> on
+
+    // event listoner
+    // third pera is false by default so dont need to write this , but in some cases we need this true
+
+    // because of event bubling owl first print then outher image print bcause bouble foam from botttom to top that is because of this third para false (that means bubling but if you give this true then capturing happening and image first print then owl print (it goes from top to bottom))
+
+    // if you want to stop event boubling then use e.stop
+    // document.getElementById('images').addEventListener('click',(e)=>{
+    //     console.log('image')
+
+    //  },false)
+
+    // document.getElementById('owl').addEventListener('click',(e)=>{
+    //     console.log('owl')
+    //     // now this event does not into opper element and buble stop
+    //     e.stopPropagation();
+
+    //  },false)
+
+    //  document.getElementById('google').addEventListener('click',(e)=>{
+    //     // because of this we are stoping the actual funality of this link element
+    //     // image is coming because of event bubling by default third param is false we can prevent that too
+
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //  })
+
+    // some imp topic
+    //  type
+    // timeStamp
+    // defaultPrevent
+    // target
+    // toElement
+    // srcElement
+    // currentTarget
+    // clientX,clientY,screenX,screenY
+    // altkey,ctrlKey,shiftkey,keyCode
+
+    document.querySelector("#images").addEventListener(
+      "click",
+      (e) => {
+        // parentNode to select parent element
+
+        if (e.target.tagName === "IMG") {
+          let removeElement = e.target.parentNode;
+          removeElement.remove();
+        }
+        // removeElement.parentNode.removeChild(removeElement)
+      },
+      false
+    );
+  </script>
+</html>
