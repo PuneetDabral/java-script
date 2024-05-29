@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+   const printRes = ({ res }) => {
+    console.log(res);
+
+    for (const breed in res) {
+        if (res[breed].length > 0) {
+            // Create a div for the breed
+            let breedDiv = document.createElement("div");
+            breedDiv.textContent = `${breed} `;
+            document.body.appendChild(breedDiv);
+
+            // Create a span for each sub-breed and append it to the div
+            res[breed].forEach(subBreed => {
+                let subBreedSpan = document.createElement("span");
+                subBreedSpan.textContent = subBreed;
+                breedDiv.appendChild(subBreedSpan);
+            });
+        }
+    }
+};
+
+      let res = null;
+      const requrl = "https://dog.ceo/api/breeds/list/all";
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", requrl);
+      // console.log(xhr.readyState)
+      xhr.onreadystatechange = () => {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          // it is string so we have to convert it in json
+          let response = JSON.parse(xhr.responseText);
+          if (response.status === "success") {
+            res = response.message;
+            printRes({res});
+          }
+        }
+      };
+
+      xhr.send();
+    </script>
+  </body>
+</html>
